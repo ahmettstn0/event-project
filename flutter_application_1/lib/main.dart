@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Etkinlik ve Organizasyon',
+      title: 'Etkinlik ve Organizasyonlar',
       theme: ThemeData(
       ),
       home: LoginPage(), 
