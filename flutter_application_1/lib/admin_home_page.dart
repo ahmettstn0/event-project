@@ -117,7 +117,7 @@ class AdminHomePage extends StatelessWidget {
           if (userEmail == 'admin@example.com' && userPassword == 'admin123') {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => AuthorizationPage()),
+              MaterialPageRoute(builder: (context) => AuthorizePage()),
             );
           } else {
             showDialog(
