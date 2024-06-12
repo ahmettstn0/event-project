@@ -45,7 +45,6 @@ class _EventsPageState extends State<EventsPage> {
         actions: [
           IconButton(
             onPressed: () {
-              // Search functionality can be added here
             },
             icon: Icon(Icons.search),
           ),
@@ -82,7 +81,6 @@ class _EventsPageState extends State<EventsPage> {
                 itemBuilder: (context, index) {
                   final int firstIndex = index * 2;
                   final int secondIndex = firstIndex + 1;
-
                   return Row(
                     children: [
                       Expanded(

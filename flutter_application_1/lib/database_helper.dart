@@ -457,7 +457,6 @@ static Future<void> insertUserEventSepet(UserEventSepet userEventSepet) async {
   );
 }
 
-
 static Future<void> removeUserEvent(String userEmail, int id) async {
   final db = await database; 
   await db.delete(
@@ -467,10 +466,42 @@ static Future<void> removeUserEvent(String userEmail, int id) async {
   );
 }
 
-
+static Future<Event?> getEvent(String etkinlikAdi, String tarihZaman) async {
+  final Database db = await database;
+  List<Map<String, dynamic>> result = await db.query(
+    'Event',
+    where: 'etkinlikAdi = ? AND tarihZaman = ?',
+    whereArgs: [etkinlikAdi, tarihZaman],
+    limit: 1,
+  );
+  if (result.isNotEmpty) {
+    return Event(
+      etkinlikAdi: result[0]['etkinlikAdi'],
+      tarihZaman: result[0]['tarihZaman'],
+      konum: result[0]['konum'],
+      aciklama: result[0]['aciklama'],
+      katilimciAdi: result[0]['katilimciAdi'],
+      salon: result[0]['salon'],
+      kontenjan: result[0]['kontenjan'],
+      ucret: result[0]['ucret'],
+      etkinlikTuru: result[0]['etkinlikTuru'],
+      resimUrl: result[0]['resimUrl'],
+    );
+  } else {
+    return null;
+  }
 }
 
-
+static Future<void> updateEventKontenjan(String etkinlikAdi, String tarihZaman, int updatedKontenjan) async {
+  final Database db = await database;
+  await db.update(
+    'Event',
+    {'kontenjan': updatedKontenjan},
+    where: 'etkinlikAdi = ? AND tarihZaman = ?',
+    whereArgs: [etkinlikAdi, tarihZaman],
+  );
+}
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

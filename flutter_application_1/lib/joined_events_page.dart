@@ -102,7 +102,6 @@ class JoinedEventsPage extends StatelessWidget {
                                               .shrink(),
                                       Text('Etkinlik Adı: ${event.etkinlikAdi}'),
                                       Text('Tarih: ${event.tarihZaman}'),
-                                      Text('Salon: ${event.salon}'),
                                       Text('Ücret: ${event.ucret}'),
                                     ],
                                   ),

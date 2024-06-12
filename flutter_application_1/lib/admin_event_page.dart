@@ -44,7 +44,6 @@ class _AdminEventPageState extends State<AdminEventPage> {
           itemBuilder: (context, index) {
             final int firstIndex = index * 2;
             final int secondIndex = firstIndex + 1;
-            
             return Row(
               children: [
                 Expanded(

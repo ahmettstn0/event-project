@@ -116,7 +116,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     );
                     return;
                   }
-
                   if (password.length < 7 || !password.contains(RegExp(r'[A-Z]'))) {
                     showDialog(
                       context: context,
@@ -137,7 +136,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     );
                     return;
                   }
-
                   User user = User(
                     name: _nameController.text,
                     email: email,

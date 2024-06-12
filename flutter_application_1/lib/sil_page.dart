@@ -36,8 +36,7 @@ class _SilPageState extends State<SilPage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/anasayfa1.jpeg'), // Arka plan resmi
-            fit: BoxFit.cover,
+            image: AssetImage('assets/images/anasayfa1.jpeg'), 
           ),
         ),
         child: ListView.builder(

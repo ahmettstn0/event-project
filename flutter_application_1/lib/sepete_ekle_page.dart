@@ -31,9 +31,9 @@ class _SepetPageState extends State<SepetPage> {
   Future<void> _removeUserEvent(UserEventSepet userEvent) async {
     if (userEvent.id != null) {
       await DatabaseHelper.removeUserEvent(widget.userEmail, userEvent.id!);
-      _fetchUserEvents(); // Listeyi güncelle
+      _fetchUserEvents(); 
     } else {
-      // id null ise bir işlem yapmayabilirsiniz veya hata mesajı gösterebilirsiniz
+      
       print('Hata: id null olamaz.');
     }
   }

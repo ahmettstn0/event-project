@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'database_helper.dart'; 
 
-
 class RecommendedEventsPage extends StatefulWidget {
   final String userEmail;
 
@@ -28,10 +27,10 @@ class _RecommendedEventsPageState extends State<RecommendedEventsPage> {
           _userEvent = user.event;
         });
       } else {
-        // Handle user not found
+        
       }
     } catch (e) {
-      // Handle error
+      
     }
   }
 

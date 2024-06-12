@@ -68,8 +68,8 @@ class _AuthorizePageState extends State<AuthorizePage> {
               Tab(text: 'Yetkilendirme Yap'),
               Tab(text: 'Yetkilendirme Kaldır'),
             ],
-            labelColor: Colors.white, // Seçili sekme yazısı rengi
-            unselectedLabelColor: Colors.white70, // Seçili olmayan sekme yazısı rengi
+            labelColor: Colors.white, 
+            unselectedLabelColor: Colors.white70, 
           ),
         ),
         body: Container(
@@ -114,7 +114,7 @@ class _AuthorizePageState extends State<AuthorizePage> {
                     trailing: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         primary: Color.fromARGB(255, 89, 58, 138),
-                        elevation: 3, // Düğmenin gölgesi
+                        elevation: 3, 
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0), 
                         ),

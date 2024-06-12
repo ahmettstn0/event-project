@@ -6,6 +6,13 @@
 <string>Haritayı düzgün gösterebilmek için konumunuza ihtiyacımız var.</string>
 <key>NSLocationAlwaysUsageDescription</key>
 <string>Haritayı düzgün gösterebilmek için konumunuza ihtiyacımız var.</string>
+<key>UIBackgroundModes</key>
+<array>
+    <string>fetch</string>
+    <string>remote-notification</string>
+</array>
+<key>NSRemoteNotificationBackgroundMode</key>
+<string>remote-notification</string>
 
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
