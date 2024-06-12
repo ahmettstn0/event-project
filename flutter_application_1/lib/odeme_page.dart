@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/database_helper.dart'; 
+import 'package:flutter_application_1/database_helper.dart';
 
 class PaymentScreen extends StatelessWidget {
   final List<UserEventSepet> userEvents;
@@ -117,14 +117,21 @@ class PaymentScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 for (var event in userEvents) {
-                  await DatabaseHelper.addUserEvent(
-                    userEmail: event.userEmail,
-                    etkinlikAdi: event.etkinlikAdi,
-                    tarihZaman: event.tarihZaman,
-                    salon: event.konum,
-                    ucret: event.ucret,
-                    resimUrl: 'your_image_url', 
-                  );
+                  Event? fetchedEvent = await DatabaseHelper.getEvent(event.etkinlikAdi, event.tarihZaman);
+                  if (fetchedEvent != null) {
+                    int updatedKontenjan = fetchedEvent.kontenjan - 1;
+                    await DatabaseHelper.updateEventKontenjan(event.etkinlikAdi, event.tarihZaman, updatedKontenjan);
+                    await DatabaseHelper.addUserEvent(
+                      userEmail: event.userEmail,
+                      etkinlikAdi: event.etkinlikAdi,
+                      tarihZaman: event.tarihZaman,
+                      salon: event.konum,
+                      ucret: event.ucret,
+                      resimUrl: 'your_image_url',
+                    );
+                  } else {
+                    print('Etkinlik bulunamadı: ${event.etkinlikAdi}, ${event.tarihZaman}');
+                  }
                 }
                 Navigator.of(context).pop();
               },
@@ -139,7 +146,7 @@ class PaymentScreen extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); 
+                Navigator.of(context).pop();
               },
               child: Text('İptal'),
             ),
