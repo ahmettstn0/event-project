@@ -26,7 +26,6 @@ class _AuthorizePageState extends State<AuthorizePage> {
 
   Future<void> _getAllAdmins() async {
     List<Admin> fetchedAdmins = await DatabaseHelper.getAllAdmins();
-    // 'admin@example.com' maili olan admini filtrele
     fetchedAdmins = fetchedAdmins.where((admin) => admin.email != 'admin@example.com').toList();
     setState(() {
       admins = fetchedAdmins;
